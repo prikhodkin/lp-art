@@ -1,0 +1,23 @@
+@font-face {
+  @include includeFont(300, $first-font, "Gilroy-Light");
+}
+
+@font-face {
+  @include includeFont(400, $first-font, "Gilroy-Regular");
+}
+
+@font-face {
+  @include includeFont(500, $first-font, "Gilroy-Medium");
+}
+
+@font-face {
+  @include includeFont(600, $first-font, "Gilroy-ExtraBold");
+}
+
+@font-face {
+  @include includeFont(700, $first-font, "Gilroy-Bold");
+}
+
+@font-face {
+  @include includeFont(800, $second-font, "Circe-ExtraBold");
+}

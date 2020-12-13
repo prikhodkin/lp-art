@@ -1,0 +1,70 @@
+.play {
+  @include reset;
+  @include pseudo;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 197px;
+  height: 197px;
+
+  &::before {
+    @include pseudo;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--first {
+    &::before {
+
+      background-image: url("../../img/play-before@first.svg");
+      background-position: left;
+    }
+  }
+
+  &--second {
+    &::before {
+
+      background-image: url("../../img/play-before@second.svg");
+      background-position: right bottom;
+    }
+  }
+
+  &--pause {
+    .play__inner {
+      background-image: url("../../img/pause.svg");
+    }
+  }
+
+  &:hover {
+    &::after {
+      @include pseudo;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 5;
+      width: 50%;
+      height: 50%;
+      background: linear-gradient(89.23deg, #fcaf45 0.66%, #f77737 20.96%, #fd1d1d 41.27%, #c13584 61.57%, #833ab4 82.41%, #405de6 103.25%);
+      border-radius: 71.5px;
+      transform: translate(-50%, -50%);
+      filter: blur(52px);
+    }
+  }
+}
+
+.play__inner {
+  @include pseudo;
+  position: relative;
+  z-index: 30;
+  width: 143px;
+  height: 143px;
+  background-color: #ffffff;
+  background-image: url("../../img/play.svg");
+  background-size: 28px;
+  border-radius: 50%;
+}

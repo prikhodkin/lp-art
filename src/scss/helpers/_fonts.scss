@@ -11,11 +11,19 @@
 }
 
 @font-face {
-  @include includeFont(600, $first-font, "Gilroy-ExtraBold");
+  @include includeFont(600, $first-font, "Gilroy-SemiBold");
 }
 
 @font-face {
   @include includeFont(700, $first-font, "Gilroy-Bold");
+}
+
+@font-face {
+  @include includeFont(900, $first-font, "Gilroy-Black");
+}
+
+@font-face {
+  @include includeFont(400, $second-font, "Circe-Regular");
 }
 
 @font-face {

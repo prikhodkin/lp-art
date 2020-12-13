@@ -1,0 +1,51 @@
+.field {
+  position: relative;
+  padding: 1px;
+  background: $g-main;
+  border-radius: 30px;
+}
+
+.field__input {
+  display: block;
+  width: 100%;
+  height: 59px;
+  padding-top: 5px;
+  padding-left: 68px;
+  font-size: 24px;
+  line-height: 29px;
+  border: none;
+  border-radius: 30px;
+}
+
+.field__label {
+  display: block;
+  width: 100%;
+
+  &--phone {
+    &::before {
+      @include pseudo;
+      position: absolute;
+      top: 50%;
+      left: 25px;
+      width: 26px;
+      height: 26px;
+      background-image: url("../../img/phone.svg");
+      transform: translateY(-50%);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .field__input {
+    height: 46px;
+    padding-left: 51px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .field__label {
+    &::before {
+      left: 19px;
+    }
+  }
+}

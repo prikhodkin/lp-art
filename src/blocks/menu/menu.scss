@@ -1,0 +1,124 @@
+.menu__button {
+  @include reset;
+  content: "";
+  position: relative;
+  width: 47px;
+  height: 47px;
+  font-size: 0;
+  line-height: 0;
+
+  &::after {
+    @include pseudo;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(89.23deg, #fcaf45 0.66%, #f77737 20.96%, #fd1d1d 41.27%, #c13584 61.57%, #833ab4 82.41%, #405de6 103.25%);
+    filter: blur(52px);
+  }
+
+  &::before {
+    @include pseudo;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+  }
+
+  &--open {
+    position: absolute;
+    top: 87px;
+    left: 50%;
+    z-index: 50;
+    transform: translateX(-50%);
+
+    &::before {
+      background-image: url("../../img/burger.svg");
+      background-size: 23px;
+    }
+  }
+
+  &--close {
+    display: block;
+    margin: 0 auto;
+
+    &::before {
+      background-image: url("../../img/close.svg");
+      background-size: 21px;
+    }
+  }
+}
+
+.menu__wrapper {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 100;
+  width: calc(100% - 40px);
+  padding: 35px 35px 57px 35px;
+  background: #ffffff;
+  border-radius: 0 0 50px 50px;
+  transform: translateY(-100%);
+  transition: all 0.3s;
+  pointer-events: none;
+
+  &--active {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.menu__list {
+  @include list-reset;
+  margin-top: 48px;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #27262b;
+}
+
+.menu__item {
+  &:hover {
+    @include textGradient;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 56px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .menu__button {
+    display: none;
+  }
+
+  .menu__wrapper {
+    position: relative;
+    top: unset;
+    left: unset;
+    width: auto;
+    padding: 0;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .menu__list {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .menu__item {
+    &:not(:last-child) {
+      margin-right: 40px;
+      margin-bottom: 0;
+    }
+  }
+}

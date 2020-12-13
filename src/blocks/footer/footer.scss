@@ -1,0 +1,171 @@
+.footer {
+  padding: 80px 20px 90px 20px;
+  background-color: #27262b;
+}
+
+.footer__logo {
+  display: block;
+  width: 102px;
+  margin: 0 auto;
+  margin-bottom: 58px;
+}
+
+.footer__contacts {
+  @include list-reset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 58px;
+  color: #ffffff;
+}
+
+.footer__contact {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 45px;
+  }
+
+  &::before {
+    @include pseudo;
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    background-size: contain;
+  }
+
+  &--email {
+    &::before {
+      background-image: url("../../img/email.svg");
+    }
+  }
+
+  &--phone {
+    &::before {
+      background-image: url("../../img/phone.svg");
+    }
+  }
+
+  &--time {
+    &::before {
+      background-image: url("../../img/clock.svg");
+    }
+  }
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+
+  .social__item {
+    &:not(:last-child) {
+      margin-right: 25px;
+    }
+  }
+}
+
+.footer__list {
+  @include list-reset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 58px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+
+  span {
+    text-decoration: underline;
+  }
+}
+
+.footer__item {
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  a:hover {
+    span {
+      text-decoration: none;
+    }
+  }
+
+
+  &--dev {
+    a {
+      display: flex;
+      align-items: center;
+
+      &::before {
+        @include pseudo;
+        width: 53px;
+        height: 14px;
+        margin-right: 9px;
+        margin-bottom: 3px;
+        background-image: url("../../img/inalion.png");
+      }
+
+      &:hover {
+        &::before {
+          background-image: url("../../img/inalion@hover.png");
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding-top: 47px;
+    padding-bottom: 47px;
+  }
+
+  .footer__list {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 781px;
+    margin: 0 auto;
+    margin-bottom: 58px;
+  }
+
+  .footer__item {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer__logo {
+    margin-bottom: 58px;
+  }
+
+  .footer__contacts {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 806px;
+    margin: 0 auto;
+    margin-bottom: 24px;
+  }
+
+  .footer__contact {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    a {
+      transform: opacity 0.3s;
+      opacity: 1;
+    }
+
+    &:hover {
+      a {
+        opacity: 0.7;
+      }
+    }
+
+    &--time {
+      order: 3;
+    }
+  }
+}

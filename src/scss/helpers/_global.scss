@@ -8,6 +8,15 @@ body {
 
 img {
   width: 100%;
+  display: block;
+}
+
+picture {
+  display: block;
+}
+
+button {
+  cursor: pointer;
 }
 
 * {

@@ -1,0 +1,114 @@
+.tooltip {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    .tooltip__inner {
+      color: #ffffff;
+      background: $g-main;
+    }
+
+    .tooltip__bullet {
+      &::before {
+        display: none;
+      }
+    }
+
+    .tooltip__content {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+.tooltip__bullet {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &::before {
+    @include pseudo;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(89.23deg, #fcaf45 0.66%, #f77737 20.96%, #fd1d1d 41.27%, #c13584 61.57%, #833ab4 82.41%, #405de6 103.25%);
+    filter: blur(52px);
+    pointer-events: none;
+  }
+}
+
+.tooltip__inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  padding-top: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.tooltip__content {
+  position: absolute;
+  top: 46px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+
+  &::after {
+    @include pseudo;
+    position: absolute;
+    top: 1px;
+    left: 50%;
+    width: 19px;
+    height: 19px;
+    background-image: url("../../img/polygon.svg");
+    background-size: contain;
+    transform: translateX(-50%);
+  }
+
+  &::before {
+    @include pseudo;
+    bottom: 15px;
+    width: 100%;
+    height: 17px;
+    background: linear-gradient(89.23deg, #fcaf45 0.66%, #f77737 20.96%, #fd1d1d 41.27%, #c13584 61.57%, #833ab4 82.41%, #405de6 103.25%);
+    filter: blur(52px);
+  }
+}
+
+.tooltip__text {
+  position: relative;
+  padding: 12px 20px;
+  font-size: 14px;
+  line-height: 122%;
+  background: #ffffff;
+  border-radius: 28px;
+}
+
+@media (min-width: 1140px) {
+  .tooltip {
+    z-index: 50;
+    justify-content: flex-end;
+
+    width: 32px;
+  }
+
+  .tooltip__content {
+    right: -21px;
+    width: 246px;
+
+
+    &::after {
+      right: 27px;
+      left: unset;
+      transform: unset;
+    }
+  }
+}

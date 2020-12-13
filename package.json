@@ -62,9 +62,12 @@
   },
   "dependencies": {
     "hc-sticky": "^2.2.3",
+    "imask": "^6.0.5",
     "jquery": "^3.5.1",
+    "nativejs-select": "^1.0.7",
     "slick-carousel": "^1.8.1",
     "stimulus": "^1.1.1",
+    "swiper": "^6.4.1",
     "turbolinks": "^5.2.0",
     "vh-check": "^2.0.5",
     "wow.js": "^1.2.2"

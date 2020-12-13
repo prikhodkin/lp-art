@@ -1,0 +1,14 @@
+.extra-title {
+  @include textGradient;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 99%;
+  font-family: $second-font;
+}
+
+@media (min-width: 768px) {
+  .extra-title {
+    font-size: 64px;
+    line-height: 99%;
+  }
+}

@@ -1,0 +1,268 @@
+.promo {
+  padding: 175px 20px 35px 20px;
+}
+
+.promo__button {
+  margin: 0 auto;
+}
+
+.promo__subtitle {
+  @include textGradient;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.promo__title {
+  margin-bottom: 53px;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 99%;
+  font-family: $second-font;
+  text-align: center;
+  color: #27262b;
+
+  span {
+    display: block;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 110.4%;
+  }
+}
+
+.promo__slider {
+  @include list-reset;
+  margin-bottom: 15px;
+}
+
+
+.promo__desc {
+  position: relative;
+  box-sizing: content-box;
+  max-width: 243px;
+  margin: 0 auto;
+  margin-bottom: 53px;
+  padding-left: 18px;
+  font-size: 18px;
+  line-height: 22px;
+
+  &::before {
+    @include pseudo;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 3px;
+    height: calc(100% - 8px);
+    background: linear-gradient(179.23deg, #fcaf45 0.63%, #f77737 20.16%, #fd1d1d 39.69%, #c13584 59.22%, #833ab4 79.26%, #405de6 99.3%);
+  }
+}
+
+.promo__content {
+  margin-bottom: 58px;
+}
+
+.promo__img {
+  position: relative;
+  mask-image: url("../../img/promo-mask@mobile.svg");
+  mask-position: bottom;
+  mask-size: cover;
+  object-fit: cover;
+}
+
+.promo__gift {
+  position: relative;
+  display: block;
+  width: 283px;
+  height: 62px;
+  margin: 21px auto;
+  background: #ffffff;
+  border-radius: 28.5px;
+
+  &::before {
+    @include pseudo;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 33px;
+    background: linear-gradient(89.23deg, #fcaf45 0.66%, #f77737 20.96%, #fd1d1d 41.27%, #c13584 61.57%, #833ab4 82.41%, #405de6 103.25%);
+    filter: blur(52px);
+  }
+
+  &:hover {
+    .promo__blur {
+      color: #ffffff;
+      background: linear-gradient(89.23deg, #fcaf45 0.66%, #f77737 20.96%, #fd1d1d 41.27%, #c13584 61.57%, #833ab4 82.41%, #405de6 103.25%);
+
+      &::before {
+        background-image: url("../../img/gift@hover.svg");
+      }
+    }
+  }
+}
+
+.promo__blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 11px 18px 11px 57px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 122%;
+  color: #27262b;
+  background: #ffffff;
+  border-radius: 28.5px;
+
+  &::before {
+    @include pseudo;
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    width: 27px;
+    height: 30px;
+    background-image: url("../../img/gift.svg");
+    background-size: contain;
+  }
+
+  span {
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 768px) {
+  .promo {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 120px;
+    padding-right: 0;
+  }
+
+  .promo__gift {
+    position: absolute;
+    right: 20px;
+    bottom: 120px;
+    z-index: 30;
+  }
+
+  .promo__title {
+    text-align: left;
+  }
+
+  .promo__button {
+    margin: 0;
+  }
+
+  .promo__desc {
+    margin-left: 0;
+  }
+
+  .promo__subtitle {
+    text-align: left;
+  }
+
+  .promo__content {
+    margin-right: 20px;
+  }
+
+  .promo__img {
+    mask-image: url("../../img/promo-mask@tablet.svg");
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .promo__container {
+    max-width: 531px;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .promo__slider {
+    width: 50%;
+  }
+
+  .promo__pagination {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1280px) {
+  .promo {
+    padding-top: 0;
+    padding-bottom: 44px;
+  }
+
+  .promo__gift {
+    right: calc(50% - 625px);
+    bottom: 275px;
+    margin: 0;
+  }
+
+  .promo__slider {
+    width: 626px;
+    margin-bottom: 10px;
+  }
+
+  .promo__container {
+    max-width: unset;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .promo__img {
+    mask-image: url("../../img/promo-mask@desktop.svg");
+    max-height: unset;
+  }
+
+  .promo__content {
+    margin-top: 167px;
+  }
+
+  .promo__subtitle {
+    margin-bottom: 30px;
+  }
+
+  .promo__title {
+    max-width: 470px;
+    margin-bottom: 47px;
+    font-size: 64px;
+
+    span {
+      position: relative;
+      display: inline;
+      font-size: 36px;
+      line-height: 110.4%;
+
+      &::after {
+        @include pseudo;
+        position: absolute;
+        top: 0;
+        right: -67px;
+        width: 52px;
+        height: 52px;
+        background-image: url("../../img/gift.png");
+      }
+    }
+  }
+
+  .promo__desc {
+    margin-bottom: 92px;
+  }
+
+  .promo__pagination {
+    justify-content: center;
+    max-width: 340px;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1300px) {
+  .promo {
+    @include page-wrapper;
+  }
+}

@@ -1,0 +1,22 @@
+.description {
+  position: relative;
+  box-sizing: content-box;
+  padding-left: 18px;
+  font-size: 18px;
+  line-height: 22px;
+
+  b,
+  a {
+    font-weight: 600;
+  }
+
+  &::before {
+    @include pseudo;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 3px;
+    height: calc(100% - 8px);
+    background: linear-gradient(179.23deg, #fcaf45 0.63%, #f77737 20.16%, #fd1d1d 39.69%, #c13584 59.22%, #833ab4 79.26%, #405de6 99.3%);
+  }
+}

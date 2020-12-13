@@ -1,3 +1,69 @@
 .button {
-  background-color: aqua;
+  @include reset;
+  position: relative;
+  display: block;
+  width: 239px;
+  height: 93px;
+  text-align: left;
+  border-radius: 46.5px;
+  cursor: pointer;
+
+  &::before {
+    @include pseudo;
+    position: absolute;
+    bottom: -12px;
+    left: 28px;
+    z-index: 5;
+    width: 184px;
+    height: 63px;
+    background: $g-main;
+    filter: blur(52px);
+  }
+
+  &:hover {
+    &::before {
+      background: linear-gradient(89.23deg, #fcaf45 0.66%, #f77737 20.96%, #fd1d1d 41.27%, #c13584 61.57%, #833ab4 82.41%, #405de6 103.25%);
+    }
+
+    .button__inner {
+      background: #ffffff;
+
+      span {
+        @include textGradient;
+      }
+
+      &::after {
+        background-image: url("../../img/paint-palette@hover.svg");
+      }
+    }
+  }
+}
+
+.button__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 43px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  background: $g-main;
+  border-radius: 46.5px;
+  pointer-events: none;
+
+  &::after {
+    @include pseudo;
+    width: 50px;
+    height: 50px;
+    margin-left: 13px;
+    background-image: url("../../img/paint-palette.svg");
+    background-size: contain;
+  }
 }

@@ -4,10 +4,10 @@
   list-style: none;
 }
 
-// Контейнер 1200 px
+// Контейнер 1280 px
 @mixin page-wrapper {
-  padding-right: calc(50% - 585px);
-  padding-left: calc(50% - 585px);
+  padding-right: calc(50% - 640px);
+  padding-left: calc(50% - 640px);
 }
 
 
@@ -108,4 +108,17 @@
   display: block;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@mixin reset() {
+  appearance: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+@mixin textGradient() {
+  background: $g-main;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

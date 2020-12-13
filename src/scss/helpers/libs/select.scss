@@ -1,0 +1,178 @@
+.nativejs-select {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(89.23deg, #FCAF45 0.66%, #F77737 20.96%, #FD1D1D 41.27%, #C13584 61.57%, #833AB4 82.41%, #405DE6 103.25%);
+  border-radius: 30px;
+  padding: 1px;
+  cursor: pointer;
+
+  &_active {
+    border-radius: 30px 30px 0 0;
+    .nativejs-select__placeholder {
+      border-radius: 30px 30px 0 0;
+      border-bottom-color: transparent;
+    }
+  }
+}
+
+.nativejs-select__placeholder,
+.nativejs-select__option {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-align: left;
+}
+
+.nativejs-select__placeholder {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 59px;
+  border: none;
+  border-radius: 30px;
+  padding-left: 68px;
+  font-size: 24px;
+  padding-top: 5px;
+  line-height: 29px;
+  background: #ffffff;
+
+  &::before {
+    content: "";
+    display: block;
+    background-image: url("../../../img/shirt.svg");
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 25px;
+    top: 21px;
+  }
+
+  &::after {
+    content: "";
+    width: 16px;
+    display: block;
+    height: 16px;
+    background-image: url("../../../img/dropdown.svg");
+    position: absolute;
+    right: 29px;
+    top: 21px;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.3s;
+  }
+}
+
+
+
+.nativejs-select__dropdown {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+  transform: translateY(100%);
+  left: 0px;
+  right: 0;
+  bottom: 0px;
+  transition: all 0.3s;
+  z-index: 5;
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  z-index: 200;
+  border-radius: 0 0 30px 30px;
+  margin-top: -1px;
+}
+
+.nativejs-select__option {
+  font-size: 24px;
+  display: block;
+  background: transparent;
+  width: 100%;
+  text-align: center;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.nativejs-select__option img {
+  margin-right: 10px;
+}
+
+.nativejs-select__option:hover {
+  background: linear-gradient(89.23deg, #FCAF45 0.66%, #F77737 20.96%, #FD1D1D 41.27%, #C13584 61.57%, #833AB4 82.41%, #405DE6 103.25%);;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
+}
+
+.nativejs-select_active {
+  border-bottom-color: transparent;
+
+  .nativejs-select__dropdown {
+    background: linear-gradient(89.23deg, #FCAF45 0.66%, #F77737 20.96%, #FD1D1D 41.27%, #C13584 61.57%, #833AB4 82.41%, #405DE6 103.25%);
+    padding: 1px;
+    border: none;
+  }
+}
+
+.nativejs-select_active .nativejs-select__placeholder:after {
+  transform: rotate(180deg);
+}
+
+.nativejs-select_active .nativejs-select__dropdown {
+  display: block;
+}
+
+.nativejs-select__search {
+  padding: 5px;
+}
+
+.nativejs-select__search-inp {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+}
+
+.nativejs-select__placeholder-value {
+  display: flex;
+  align-items: center;
+}
+
+.nativejs-select__options {
+  background: #ffffff;
+  border-radius: 0 0 30px 30px;
+  margin-top: -2px;
+  padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .nativejs-select__placeholder {
+    height: 46px;
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 51px;
+    &::before {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 19px;
+    }
+
+    &::after {
+      width: 12px;
+      height: 12px;
+      right: 19px;
+      top: 18px;
+    }
+  }
+
+  .nativejs-select__options {
+    padding-top: 16px;
+  }
+
+  .nativejs-select__option {
+
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

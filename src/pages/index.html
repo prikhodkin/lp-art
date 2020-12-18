@@ -6,6 +6,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0">
   @@include('../blocks/favicon/favicon.html')
   <link rel="stylesheet" href="css/main.css">
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(70634989, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true,
+      webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/70634989" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 <header class="header">
@@ -17,25 +32,32 @@
     <div class="menu__wrapper">
       <button class="menu__button menu__button--close">Закрыть меню</button>
       <ul class="menu__list">
-        <li class="menu__item"><a href="#">Вопросы</a></li>
-        <li class="menu__item"><a href="#">Отзывы</a></li>
-        <li class="menu__item"><a href="#">Контакты</a></li>
-        <li class="menu__item"><a href="#">Заказать</a></li>
+        <li class="menu__item"><a href="#faq">Вопросы</a></li>
+        <li class="menu__item"><a href="#reviews">Отзывы</a></li>
+        <li class="menu__item"><a href="#contacts">Контакты</a></li>
+        <li class="menu__item"><a onclick="ym(70634989, 'reachGoal', 'getAppOrder'); return true;" href="#order">Заказать</a></li>
       </ul>
     </div>
   </nav>
+  <div class="header__language language">
+    <div class="language__wrapper">
+      <button class="language__arrow"></button>
+      <a href="index.html" class="language__item language__item--ru">RU</a>
+      <a href="index.html" class="language__item language__item--en">EN</a>
+    </div>
+  </div>
   <div class="header__contacts">
     <a href="tel:+79166741238" class="header__phone">+<span>7 916 674</span>-<span>12</span>-<span>38</span></a>
     <ul class="header__social social">
       <li class="social__item social__item--whatsapp">
-        <a href="#">
+        <a onclick="ym(70634989, 'reachGoal', 'getAppWhatsApp'); return true;" href="#">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#icon-whatsapp"></use>
           </svg>
         </a>
       </li>
       <li class="social__item social__item--instagram">
-        <a href="#">
+        <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram'); return true;" href="#">
           <svg>
             <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
           </svg>
@@ -50,7 +72,7 @@
       <p class="promo__subtitle">Такого не будет ни у кого</p>
       <h1 class="promo__title">Лучший персональный подарок <span>на новый год</span></h1>
       <p class="promo__desc">Оригинальные и стильные рисунки на вещах и одежде</p>
-      <a href="#" class="promo__button button">
+      <a href="#portfolio" class="promo__button button">
         <span class="button__inner"><span>Смотреть<br> работы</span></span>
       </a>
     </div>
@@ -109,7 +131,7 @@
       </li>
     </ul>
   </section>
-  <section class="portfolio">
+  <section class="portfolio" id="portfolio">
     <div class="portfolio__top">
       <div class="portfolio__left">
         <h2 class="portfolio__title title">Ищешь оригинальный подарок?</h2>
@@ -126,7 +148,21 @@
         </div>
         <div class="swiper-container" data-target="portfolio.container">
           <ul class="portfolio__slider swiper-wrapper">
-            <li class="portfolio__slide">
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
               <span class="portfolio__time">Срок изготовления: 11 дней</span>
               <picture>
                 <source type="image/webp" srcset="../img/slide-01.webp">
@@ -136,41 +172,209 @@
           </ul>
           <div class="portfolio__pagination swiper-pagination"></div>
           <div class="portfolio__controls controls">
-            <button class="controls__button controls__button--prev" data-target="video.prev">
+            <button class="controls__button controls__button--prev" data-target="portfolio.prev">
               <span class="controls__inner" aria-label="Назад"></span>
             </button>
-            <button class="controls__button controls__button--next" data-target="video.next">
+            <button class="controls__button controls__button--next" data-target="portfolio.next">
+              <span class="controls__inner" aria-label="Вперед"></span>
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="portfolio__item" data-controller="portfolio">
+        <div class="portfolio__category">
+          <span class="portfolio__inner">Худи</span>
+        </div>
+        <div class="swiper-container" data-target="portfolio.container">
+          <ul class="portfolio__slider swiper-wrapper">
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-02.webp">
+                <img src="../img/slide-02.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+          </ul>
+          <div class="portfolio__pagination swiper-pagination"></div>
+          <div class="portfolio__controls controls">
+            <button class="controls__button controls__button--prev" data-target="portfolio.prev">
+              <span class="controls__inner" aria-label="Назад"></span>
+            </button>
+            <button class="controls__button controls__button--next" data-target="portfolio.next">
+              <span class="controls__inner" aria-label="Вперед"></span>
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="portfolio__item" data-controller="portfolio">
+        <div class="portfolio__category">
+          <span class="portfolio__inner">Куртки</span>
+        </div>
+        <div class="swiper-container" data-target="portfolio.container">
+          <ul class="portfolio__slider swiper-wrapper">
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-03.webp">
+                <img src="../img/slide-03.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+          </ul>
+          <div class="portfolio__pagination swiper-pagination"></div>
+          <div class="portfolio__controls controls">
+            <button class="controls__button controls__button--prev" data-target="portfolio.prev">
+              <span class="controls__inner" aria-label="Назад"></span>
+            </button>
+            <button class="controls__button controls__button--next" data-target="portfolio.next">
+              <span class="controls__inner" aria-label="Вперед"></span>
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="portfolio__item" data-controller="portfolio">
+        <div class="portfolio__category">
+          <span class="portfolio__inner">Рюкзаки</span>
+        </div>
+        <div class="swiper-container" data-target="portfolio.container">
+          <ul class="portfolio__slider swiper-wrapper">
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-04.webp">
+                <img src="../img/slide-04.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+          </ul>
+          <div class="portfolio__pagination swiper-pagination"></div>
+          <div class="portfolio__controls controls">
+            <button class="controls__button controls__button--prev" data-target="portfolio.prev">
+              <span class="controls__inner" aria-label="Назад"></span>
+            </button>
+            <button class="controls__button controls__button--next" data-target="portfolio.next">
+              <span class="controls__inner" aria-label="Вперед"></span>
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="portfolio__item" data-controller="portfolio">
+        <div class="portfolio__category">
+          <span class="portfolio__inner">И многое другое</span>
+        </div>
+        <div class="swiper-container" data-target="portfolio.container">
+          <ul class="portfolio__slider swiper-wrapper">
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-05.webp">
+                <img src="../img/slide-05.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+            <li class="portfolio__slide swiper-slide">
+              <span class="portfolio__time">Срок изготовления: 11 дней</span>
+              <picture>
+                <source type="image/webp" srcset="../img/slide-01.webp">
+                <img src="../img/slide-01.jpg" alt="slide" class="portfolio__img">
+              </picture>
+            </li>
+          </ul>
+          <div class="portfolio__pagination swiper-pagination"></div>
+          <div class="portfolio__controls controls">
+            <button class="controls__button controls__button--prev" data-target="portfolio.prev">
+              <span class="controls__inner" aria-label="Назад"></span>
+            </button>
+            <button class="controls__button controls__button--next" data-target="portfolio.next">
               <span class="controls__inner" aria-label="Вперед"></span>
             </button>
           </div>
         </div>
       </li>
     </ul>
+    <div class="portfolio__info">
+      <ul class="portfolio__social social">
+        <li class="social__item social__item--instagram">
+          <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram'); return true;" href="#">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <p>Как сочетать яркую кастомную вещь с повседневной одеждой можно узнать в нашем <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram'); return true;" href="#">аккаунте Instagram</a></p>
+    </div>
   </section>
-  <section class="reviews" data-controller="reviews">
+  <section class="reviews" id="reviews" data-controller="reviews">
     <h2 class="reviews__title title">Радостные обладатели индивидуальной росписи :)</h2>
     <div class="swiper-container" data-target="reviews.container">
       <ul class="reviews__list swiper-wrapper">
         <li class="reviews__item swiper-slide">
           <div class="reviews__img">
             <pucture>
-              <source type="image/webp" srcset="../img/review-01.webp">
-              <img src="../img/review-01.jpg" alt="Отзыв">
+              <source type="image/webp" srcset="../img/reviews-01.webp">
+              <img src="../img/reviews-01.jpg" alt="Отзыв">
             </pucture>
           </div>
           <div class="reviews__body">
             <div class="reviews__content">
-              <div class="reviews__name">Ирина Иванова</div>
+              <div class="reviews__name">Сергей</div>
               <div class="reviews__description description">
                 <div class="description__content">
                   <p class="description__text"><b>Тип вещи:</b> Футболка</p>
                   <p class="description__text"><b>Срок изготовления:</b> 8 дней</p>
                 </div>
               </div>
-              <p class="reviews__text">Спасибо за такой крутой принт на моей новой джинсовке! Теперь все друзья хотят себе кастом вещей!</p>
+              <p class="reviews__text">Вау! Очень круто! Мне очень нравится, прямо как я хотел!<br>Динамика, шрифт, цвета – все класс!</p>
               <ul class="reviews__social social">
                 <li class="social__item social__item--instagram">
-                  <a href="#">
+                  <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram'); return true;" href="#">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
                     </svg>
@@ -183,23 +387,23 @@
         <li class="reviews__item swiper-slide">
           <div class="reviews__img">
             <pucture>
-              <source type="image/webp" srcset="../img/review-01.webp">
-              <img src="../img/review-01.jpg" alt="Отзыв">
+              <source type="image/webp" srcset="../img/reviews-02.webp">
+              <img src="../img/reviews-02.jpg" alt="Отзыв">
             </pucture>
           </div>
           <div class="reviews__body">
             <div class="reviews__content">
-              <div class="reviews__name">Ирина Иванова</div>
+              <div class="reviews__name">Юлия</div>
               <div class="reviews__description description">
                 <div class="description__content">
                   <p class="description__text"><b>Тип вещи:</b> Футболка</p>
                   <p class="description__text"><b>Срок изготовления:</b> 8 дней</p>
                 </div>
               </div>
-              <p class="reviews__text">Спасибо за такой крутой принт на моей новой джинсовке! Теперь все друзья хотят себе кастом вещей!</p>
+              <p class="reviews__text">Лена, вы молодец! Спасибо за такую прекрасную работу! Татуировка просто огонь, и в прямом и в переносном смысле)</p>
               <ul class="reviews__social social">
                 <li class="social__item social__item--instagram">
-                  <a href="#">
+                  <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram'); return true;" href="#">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
                     </svg>
@@ -212,23 +416,81 @@
         <li class="reviews__item swiper-slide">
           <div class="reviews__img">
             <pucture>
-              <source type="image/webp" srcset="../img/review-01.webp">
-              <img src="../img/review-01.jpg" alt="Отзыв">
+              <source type="image/webp" srcset="../img/reviews-03.webp">
+              <img src="../img/reviews-03.jpg" alt="Отзыв">
             </pucture>
           </div>
           <div class="reviews__body">
             <div class="reviews__content">
-              <div class="reviews__name">Ирина Иванова</div>
+              <div class="reviews__name">Ольга</div>
               <div class="reviews__description description">
                 <div class="description__content">
                   <p class="description__text"><b>Тип вещи:</b> Футболка</p>
                   <p class="description__text"><b>Срок изготовления:</b> 8 дней</p>
                 </div>
               </div>
-              <p class="reviews__text">Спасибо за такой крутой принт на моей новой джинсовке! Теперь все друзья хотят себе кастом вещей!</p>
+              <p class="reviews__text">Ваааау!<br>Неоновый цвет очень круто! Я буду очень рада носить такую уникальную джинсовку, жду не дождусь ее получить.</p>
               <ul class="reviews__social social">
                 <li class="social__item social__item--instagram">
-                  <a href="#">
+                  <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram'); return true;" href="#">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="reviews__item swiper-slide">
+          <div class="reviews__img">
+            <pucture>
+              <source type="image/webp" srcset="../img/reviews-04.webp">
+              <img src="../img/reviews-04.jpg" alt="Отзыв">
+            </pucture>
+          </div>
+          <div class="reviews__body">
+            <div class="reviews__content">
+              <div class="reviews__name">Анастасия</div>
+              <div class="reviews__description description">
+                <div class="description__content">
+                  <p class="description__text"><b>Тип вещи:</b> Футболка</p>
+                  <p class="description__text"><b>Срок изготовления:</b> 8 дней</p>
+                </div>
+              </div>
+              <p class="reviews__text">Спасибо огромное за такую работу! Уже хочется увидеть вживую, это очень круто!</p>
+              <ul class="reviews__social social">
+                <li class="social__item social__item--instagram">
+                  <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram'); return true;" href="#">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="reviews__item swiper-slide">
+          <div class="reviews__img">
+            <pucture>
+              <source type="image/webp" srcset="../img/reviews-05.webp">
+              <img src="../img/reviews-05.jpg" alt="Отзыв">
+            </pucture>
+          </div>
+          <div class="reviews__body">
+            <div class="reviews__content">
+              <div class="reviews__name">Татьяна</div>
+              <div class="reviews__description description">
+                <div class="description__content">
+                  <p class="description__text"><b>Тип вещи:</b> Футболка</p>
+                  <p class="description__text"><b>Срок изготовления:</b> 8 дней</p>
+                </div>
+              </div>
+              <p class="reviews__text">Моя маечка!<br>Как красиво получилось, идеально, это то, что я хотела, спасибо!</p>
+              <ul class="reviews__social social">
+                <li class="social__item social__item--instagram">
+                  <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram'); return true;" href="#">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
                     </svg>
@@ -249,14 +511,17 @@
       </div>
     </div>
   </section>
-  <section class="idea">
+  <section class="idea" id="order">
     <div class="idea__content">
       <h2 class="idea__title title">Придумали идею росписи своей вещи, но не знаете, как воплотить её в реальность?</h2>
       <p class="idea__description description">Оставьте свой номер телефона, и мы перезвоним вам <b>в ближайшее время</b> для обсуждения деталей</p>
-      <form action="" class="order__form form">
+      <form onsubmit="ym(70634989, 'reachGoal', 'getAppDiscussIdea'); return true;" action="" class="order__form form">
+        <input type="hidden" name="project_name" value="LP Art">
+        <input type="hidden" name="admin_email" value="prikhodkin_ilya@mail.ru">
+        <input type="hidden" name="form_subject" value="Есть идея | LP Art">
         <div class="form__field select">
           <label for="t1" class="select__label"><span class="visually-hidden">Тип вещи</span></label>
-          <select name="type" id="t1" class="select__input">
+          <select name="Тип" id="t1" class="select__input">
             <option selected value="Тип вещи">Тип вещи</option>
             <option value="Джинса">Джинса</option>
             <option value="Хлопок">Хлопок</option>
@@ -272,7 +537,7 @@
         </div>
         <div class="form__field field">
           <label for="phone" class="field__label field__label--phone"><span class="visually-hidden">Телефон</span></label>
-          <input required type="tel" name="phone" id="phone" class=" field__input field__input--phone">
+          <input required type="tel" name="Телефон" id="phone" class=" field__input field__input--phone">
         </div>
         <button class="form__button button">
           <span class="button__inner"><span>Обсудить<br> идею</span></span>
@@ -281,14 +546,14 @@
           <p class="form__text">Или свяжитесь с нами:</p>
           <ul class="form__social social">
             <li class="social__item social__item--whatsapp">
-              <a href="#">
+              <a onclick="ym(70634989, 'reachGoal', 'getAppWhatsApp'); return true;" href="#">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#icon-whatsapp"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item social__item--instagram">
-              <a href="#">
+              <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram'); return true;" href="#">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
                 </svg>
@@ -407,43 +672,45 @@
       </div>
     </div>
   </section>
-  <section class="faq" data-controller="faq">
+  <section class="faq" id="faq" data-controller="faq">
     <h2 class="faq__title title">Ответы на самые частые вопросы</h2>
     <ul class="faq__list">
       <li class="faq__item" data-target="faq.item">
         <div class="faq__inner">
           <p class="faq__question">Как стирать кастомную одежду</p>
-          <p class="faq__answer">Мы получаем вашу заявку на кастом, связываемся с вами по телефону или через мессенджеры, обсуждаем детали заказа</p>
+          <p class="faq__answer">Стирка при 30-40 градусах мягкими моющими средствами, при стирке в стиральной машине выбирайте бережный (деликатной) режим, перед стиркой выверните вещь наизнанку</p>
         </div>
       </li>
       <li class="faq__item" data-target="faq.item">
         <div class="faq__inner">
           <p class="faq__question">Как ухаживать за вещью с рисунком</p>
-          <p class="faq__answer">Мы получаем вашу заявку на кастом, связываемся с вами по телефону или через мессенджеры, обсуждаем детали заказа</p>
+          <p class="faq__answer">Существует несколько простых правил, для сохранения свежего и яркого рисунка: 1. Стирка при 30-40 градусах мягкими моющими средствами 2. Стирать отдельно от всех вещей предварительно вывернуть вещь наизнанку 3. Гладить рисунок с обратной стороны</p>
         </div>
       </li>
       <li class="faq__item" data-target="faq.item">
         <div class="faq__inner">
           <p class="faq__question">С какими видами ткани вы работаете</p>
-          <p class="faq__answer">Мы получаем вашу заявку на кастом, связываемся с вами по телефону или через мессенджеры, обсуждаем детали заказа</p>
+          <p class="faq__answer">Данные краски подходят почти для всех видов ткани, для росписи отлично подойдет джинсовая куртка, хлопковая футболка, свитшот, кожаная обувь, зимняя куртка, совместимость краски с выбранным вами видом краски можно уточнить при заказе росписи, указав тип ткани, или написать нам</p>
         </div>
       </li>
       <li class="faq__item" data-target="faq.item">
         <div class="faq__inner">
           <p class="faq__question">От чего зависит срок выполнения заказа</p>
-          <p class="faq__answer">Мы получаем вашу заявку на кастом, связываемся с вами по телефону или через мессенджеры, обсуждаем детали заказа</p>
+          <p class="faq__answer">Сроки выполнения работы зависят от сложности и размера рисунка, от наличия идеи ( эскиза )
+
+            Стандартные сроки от 5-7 дней, при необходимости создаем эскизы и помогаем с выбором идеи, при этом сроки выполнения могут увеличиться</p>
         </div>
       </li>
       <li class="faq__item" data-target="faq.item">
         <div class="faq__inner">
           <p class="faq__question">Какую краску вы используете</p>
-          <p class="faq__answer">Мы получаем вашу заявку на кастом, связываемся с вами по телефону или через мессенджеры, обсуждаем детали заказа</p>
+          <p class="faq__answer">При нанесении рисунка мы используем только специализированные акриловые краски на основе водной акриловой дисперсии, которые не испортятся и не сотрутся при стирке одежды</p>
         </div>
       </li>
       <li class="faq__item" data-target="faq.item">
         <div class="faq__inner">
           <p class="faq__question">Можно ли расписать свою вещь</p>
-          <p class="faq__answer">Мы получаем вашу заявку на кастом, связываемся с вами по телефону или через мессенджеры, обсуждаем детали заказа</p>
+          <p class="faq__answer">Мы занимаемся росписью на любой одежде, обуви и аксессуарах Вы можете заказать выбранный вами рисунок и мы реализуем его Будь то кроссовки или любимая толстовка, очень важно, чтобы перед нанесением рисунка все было чисто и поглажено, иначе мы не сможем взяться за работу</p>
         </div>
       </li>
     </ul>
@@ -452,10 +719,13 @@
     <div class="order__content">
       <h2 class="order__title title">Планируешь сделать подарок к Новому году?</h2>
       <p class="order__description description">Получи скидку 10% при заказе<br> до 20 декабря включительно</p>
-      <form action="" class="order__form form">
+      <form onsubmit="ym(70634989, 'reachGoal', 'getAppDiscount');" action="" class="order__form form">
+        <input type="hidden" name="project_name" value="LP Art">
+        <input type="hidden" name="admin_email" value="prikhodkin_ilya@mail.ru">
+        <input type="hidden" name="form_subject" value="Получить скидку | LP Art">
         <div class="form__field field">
           <label for="phone2" class="field__label field__label--phone"><span class="visually-hidden">Телефон</span></label>
-          <input required type="tel" name="phone" id="phone2" class=" field__input field__input--phone">
+          <input required type="tel" name="Телефон" id="phone2" class=" field__input field__input--phone">
         </div>
         <button class="form__button button">
           <span class="button__inner"><span>Получить<br> скидку</span></span>
@@ -464,14 +734,14 @@
           <p class="form__text">Или свяжитесь с нами:</p>
           <ul class="form__social social">
             <li class="social__item social__item--whatsapp">
-              <a href="#">
+              <a onclick="ym(70634989, 'reachGoal', 'getAppWhatsApp');" href="#">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#icon-whatsapp"></use>
                 </svg>
               </a>
             </li>
             <li class="social__item social__item--instagram">
-              <a href="#">
+              <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram');" href="#">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
                 </svg>
@@ -490,30 +760,30 @@
     </div>
   </section>
 </main>
-<footer class="footer">
+<footer class="footer" id="contacts">
   <a href="#" class="footer__logo logo">
     <img src="../img/logo@light.svg" alt="logo" class="logo__img">
   </a>
   <ul class="footer__contacts">
-    <li class="footer__contact footer__contact--email"><a href="mailto:Eplatooonova@gmail.com">Eplatooonova@gmail.com</a></li>
+    <li class="footer__contact footer__contact--email"><a onclick="ym(70634989, 'reachGoal', 'getAppEmail');" href="mailto:Eplatooonova@gmail.com">Eplatooonova@gmail.com</a></li>
     <li class="footer__contact footer__contact--time">9.00 - 18.00 без выходных</li>
     <li class="footer__contact footer__contact--phone"><a href="tel:+79166741238"> +7 916 674-12-38</a></li>
   </ul>
   <ul class="footer__list">
     <li class="footer__item">ИП Платонова Елена Иванова © 2020</li>
-    <li class="footer__item"><a href="#"><span>Политика конфиденциальности</span></a></li>
-    <li class="footer__item footer__item--dev"><a href="#"><span>Разработка веб-сайтов</span></a></li>
+    <li class="footer__item"><a class="get-popup" href="javascript://" data-popup="politic"><span>Политика конфиденциальности</span></a></li>
+    <li class="footer__item footer__item--dev"><a href="https://inalion.com"><span>Разработка веб-сайтов</span></a></li>
   </ul>
   <ul class="footer__social social">
     <li class="social__item social__item--whatsapp">
-      <a href="#">
+      <a onclick="ym(70634989, 'reachGoal', 'getAppWhatsApp');" href="#">
         <svg>
           <use xlink:href="img/sprites/sprite.svg#icon-whatsapp"></use>
         </svg>
       </a>
     </li>
     <li class="social__item social__item--instagram">
-      <a href="#">
+      <a onclick="ym(70634989, 'reachGoal', 'getAppFreeInstagram');" href="#">
         <svg>
           <use xlink:href="img/sprites/sprite.svg#icon-instagram"></use>
         </svg>
@@ -522,6 +792,7 @@
   </ul>
 </footer>
 <div class="overlay"></div>
+@@include('../blocks/popup/popup.html')
 <script src="js/vendor.js"></script>
 <script src="js/general.js"></script>
 </body>

@@ -33,11 +33,11 @@
   }
 
   &--open {
-    position: absolute;
-    top: 87px;
-    left: 50%;
-    z-index: 50;
-    transform: translateX(-50%);
+    //position: absolute;
+    //top: 87px;
+    //left: 50%;
+    //z-index: 50;
+    //transform: translateX(-50%);
 
     &::before {
       background-image: url("../../img/burger.svg");

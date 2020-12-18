@@ -18,11 +18,12 @@ export default class extends Controller {
 
     _this.addEventListener(`click`, function () {
       if(isActive) {
-        _this.classList.add(PAUSE_CLASS);
+        // _this.classList.add(PAUSE_CLASS);
         video.play();
+        _this.style.display = 'none';
         isActive = !isActive;
       } else {
-        _this.classList.remove(PAUSE_CLASS);
+        // _this.classList.remove(PAUSE_CLASS);
         video.pause();
         isActive = !isActive;
       }
@@ -30,7 +31,8 @@ export default class extends Controller {
       video.addEventListener(`ended`, () => {
         isActive = true;
         console.log(isActive)
-        _this.classList.remove(PAUSE_CLASS)
+        _this.style.display = 'flex';
+        // _this.classList.remove(PAUSE_CLASS)
       })
     })
   }

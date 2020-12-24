@@ -17,8 +17,8 @@ const menu = document.querySelector(`.menu__wrapper`);
 const overlay = document.querySelector(`.overlay`);
 const phones = document.querySelectorAll(`.field__input--phone`);
 const phoneOption = {
-  mask: '{+7} 000-000-00-00',
-  lazy: false
+  mask: '0 000-000-00-00',
+  lazy: true
 }
 
 // Инициализация попапов
@@ -85,4 +85,31 @@ $(".form").submit(function() { //Change
     }, 1000);
   });
   return false;
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(video) {
+        if (video.isIntersecting) {
+          for (var source in video.target.children) {
+            var videoSource = video.target.children[source];
+            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+              videoSource.src = videoSource.dataset.src;
+            }
+          }
+
+          video.target.load();
+          video.target.classList.remove("lazy");
+          lazyVideoObserver.unobserve(video.target);
+        }
+      });
+    });
+
+    lazyVideos.forEach(function(lazyVideo) {
+      lazyVideoObserver.observe(lazyVideo);
+    });
+  }
 });

@@ -82,6 +82,10 @@
 }
 
 .footer__item {
+
+  &--hidden {
+    color: transparent;
+  }
   &:not(:last-child) {
     margin-bottom: 30px;
   }

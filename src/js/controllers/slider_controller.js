@@ -9,6 +9,7 @@ export default class extends Controller {
   init() {
     const swiper = new Swiper(this.containerTarget, {
       autoplay: true,
+      lazy: true,
       effect: 'fade',
       pagination: {
         el: '.swiper-pagination',

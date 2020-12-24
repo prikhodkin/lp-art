@@ -11,6 +11,7 @@ export default class extends Controller {
   init() {
     const swiper = new Swiper(this.containerTarget, {
       effect: "fade",
+      lazy: true,
       autoHeight: true,
       navigation: {
         nextEl: this.nextTarget,

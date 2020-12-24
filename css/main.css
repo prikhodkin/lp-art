@@ -1769,6 +1769,9 @@ a {
   .footer__list span {
     text-decoration: underline; }
 
+.footer__item--hidden {
+  color: transparent; }
+
 .footer__item:not(:last-child) {
   margin-bottom: 30px; }
 

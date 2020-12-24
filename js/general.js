@@ -475,6 +475,7 @@ var _default = /*#__PURE__*/function (_Controller) {
     value: function init() {
       var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](this.containerTarget, {
         effect: "fade",
+        lazy: true,
         autoHeight: true,
         navigation: {
           nextEl: this.nextTarget,
@@ -557,6 +558,7 @@ var _default = /*#__PURE__*/function (_Controller) {
     value: function init() {
       var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](this.containerTarget, {
         effect: "fade",
+        lazy: true,
         autoHeight: true,
         navigation: {
           nextEl: this.nextTarget,
@@ -635,6 +637,7 @@ var _default = /*#__PURE__*/function (_Controller) {
     value: function init() {
       var swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](this.containerTarget, {
         autoplay: true,
+        lazy: true,
         effect: 'fade',
         pagination: {
           el: '.swiper-pagination',
@@ -874,8 +877,8 @@ var menu = document.querySelector(".menu__wrapper");
 var overlay = document.querySelector(".overlay");
 var phones = document.querySelectorAll(".field__input--phone");
 var phoneOption = {
-  mask: '{+7} 000-000-00-00',
-  lazy: false
+  mask: '0 000-000-00-00',
+  lazy: true
 }; // Инициализация попапов
 
 popups.forEach(function (popup) {
@@ -947,6 +950,32 @@ jquery__WEBPACK_IMPORTED_MODULE_5___default()(".form").submit(function () {
     }, 1000);
   });
   return false;
+});
+document.addEventListener("DOMContentLoaded", function () {
+  var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    var lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (video) {
+        if (video.isIntersecting) {
+          for (var source in video.target.children) {
+            var videoSource = video.target.children[source];
+
+            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+              videoSource.src = videoSource.dataset.src;
+            }
+          }
+
+          video.target.load();
+          video.target.classList.remove("lazy");
+          lazyVideoObserver.unobserve(video.target);
+        }
+      });
+    });
+    lazyVideos.forEach(function (lazyVideo) {
+      lazyVideoObserver.observe(lazyVideo);
+    });
+  }
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 

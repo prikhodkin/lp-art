@@ -128,7 +128,7 @@
 
   .footer__list {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 781px;
     margin: 0 auto;
     margin-bottom: 58px;
@@ -137,6 +137,7 @@
   .footer__item {
     &:not(:last-child) {
       margin-bottom: 0;
+      margin-right: 100px;
     }
   }
 

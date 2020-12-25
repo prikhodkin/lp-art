@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle';
 import {Controller} from 'stimulus';
 
 export default class extends Controller {
-  static targets = [ `container`, `prev`, `next`, `play`, `slide` ]
+  static targets = [ `container`, `prev`, `next`, `play`, `slide`, `video` ]
 
   connect() {
     this.init();
@@ -22,11 +22,19 @@ export default class extends Controller {
         video.play();
         _this.style.display = 'none';
         isActive = !isActive;
-      } else {
-        // _this.classList.remove(PAUSE_CLASS);
-        video.pause();
-        isActive = !isActive;
       }
+
+      video.addEventListener(`click`, () => {
+        video.pause();
+        if(!isActive) {
+          _this.style.display = 'flex';
+          _this.classList.add(PAUSE_CLASS);
+          setTimeout(() => {
+            _this.classList.remove(PAUSE_CLASS);
+          }, 300)
+        }
+        isActive = true;
+      })
 
       video.addEventListener(`ended`, () => {
         isActive = true;

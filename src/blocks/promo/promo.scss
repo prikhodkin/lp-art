@@ -69,6 +69,7 @@
   mask-position: bottom;
   mask-size: cover;
   object-fit: cover;
+  height: 350px;
 }
 
 .promo__gift {
@@ -172,8 +173,11 @@
   .promo__img {
     mask-image: url("../../img/promo-mask@tablet.svg");
     width: 100%;
+    mask-position: right;
     object-fit: cover;
-    height: 100%;
+    height: 450px;
+    mask-size: contain;
+    mask-repeat: no-repeat;
   }
 
   .promo__container {
@@ -217,6 +221,7 @@
   .promo__img {
     mask-image: url("../../img/promo-mask@desktop.svg");
     max-height: unset;
+    height: 672px;
   }
 
   .promo__content {

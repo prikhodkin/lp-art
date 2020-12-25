@@ -800,12 +800,23 @@ var _default = /*#__PURE__*/function (_Controller) {
           video.play();
           _this.style.display = 'none';
           isActive = !isActive;
-        } else {
-          // _this.classList.remove(PAUSE_CLASS);
-          video.pause();
-          isActive = !isActive;
         }
 
+        video.addEventListener("click", function () {
+          video.pause();
+
+          if (!isActive) {
+            _this.style.display = 'flex';
+
+            _this.classList.add(PAUSE_CLASS);
+
+            setTimeout(function () {
+              _this.classList.remove(PAUSE_CLASS);
+            }, 300);
+          }
+
+          isActive = true;
+        });
         video.addEventListener("ended", function () {
           isActive = true;
           console.log(isActive);
@@ -828,7 +839,7 @@ var _default = /*#__PURE__*/function (_Controller) {
   return _default;
 }(stimulus__WEBPACK_IMPORTED_MODULE_1__["Controller"]);
 
-_defineProperty(_default, "targets", ["container", "prev", "next", "play", "slide"]);
+_defineProperty(_default, "targets", ["container", "prev", "next", "play", "slide", "video"]);
 
 
 

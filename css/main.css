@@ -1512,7 +1512,8 @@ a {
   -webkit-mask-size: cover;
   mask-size: cover;
   -o-object-fit: cover;
-  object-fit: cover; }
+  object-fit: cover;
+  height: 350px; }
 
 .promo__gift {
   position: relative;
@@ -1594,9 +1595,15 @@ a {
     -webkit-mask-image: url("../img/promo-mask@tablet.svg");
     mask-image: url("../img/promo-mask@tablet.svg");
     width: 100%;
+    -webkit-mask-position: right;
+    mask-position: right;
     -o-object-fit: cover;
     object-fit: cover;
-    height: 100%; }
+    height: 450px;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat; }
   .promo__container {
     max-width: 531px;
     margin-right: 0;
@@ -1624,7 +1631,8 @@ a {
   .promo__img {
     -webkit-mask-image: url("../img/promo-mask@desktop.svg");
     mask-image: url("../img/promo-mask@desktop.svg");
-    max-height: unset; }
+    max-height: unset;
+    height: 672px; }
   .promo__content {
     margin-top: 167px; }
   .promo__subtitle {
@@ -1800,12 +1808,13 @@ a {
     padding-bottom: 47px; }
   .footer__list {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 781px;
     margin: 0 auto;
     margin-bottom: 58px; }
   .footer__item:not(:last-child) {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-right: 100px; }
   .footer__logo {
     margin-bottom: 58px; }
   .footer__contacts {
@@ -2282,8 +2291,11 @@ a {
   .play--second::before {
     background-image: url("../img/play-before@second.svg");
     background-position: right bottom; }
-  .play--pause .play__inner {
-    background-image: url("../img/pause.svg"); }
+  .play--pause {
+    -webkit-animation: scale 0.3s linear both;
+    animation: scale 0.3s linear both; }
+    .play--pause .play__inner {
+      background-image: url("../img/pause.svg"); }
   .play:hover::after {
     content: "";
     display: block;
@@ -2300,6 +2312,18 @@ a {
     transform: translate(-50%, -50%);
     -webkit-filter: blur(52px);
     filter: blur(52px); }
+
+@-webkit-keyframes scale {
+  from {
+    transform: scale(0.1); }
+  to {
+    transform: scale(1); } }
+
+@keyframes scale {
+  from {
+    transform: scale(0.1); }
+  to {
+    transform: scale(1); } }
 
 .play__inner {
   content: "";
@@ -2410,13 +2434,15 @@ a {
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center;
-    object-position: center; }
+    object-position: center;
+    cursor: pointer; }
 
 .video__play {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  margin-left: -98.5px;
+  margin-top: -98.5px; }
 
 .video__controls {
   justify-content: space-between;

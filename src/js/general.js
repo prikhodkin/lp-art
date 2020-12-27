@@ -17,7 +17,7 @@ const menu = document.querySelector(`.menu__wrapper`);
 const overlay = document.querySelector(`.overlay`);
 const phones = document.querySelectorAll(`.field__input--phone`);
 const phoneOption = {
-  mask: '0 000-000-00-00',
+  mask: '000000000000',
   lazy: true
 }
 
